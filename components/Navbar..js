@@ -49,8 +49,7 @@ const ResponsiveNavigation = () => {
                   <p className="text-2xl">[Public Speaker, Coder]</p>
                 </div>
               </div>
-              <img src="manasjainpic.jpg" alt="Profile" className="h-full lg:w-[300px] lg:h-[300px] mb-4 bg-cover rounded-lg" />
-            </div>
+              <img src="manasjainpic.jpg" alt="Profile" className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 bg-cover rounded-lg" />            </div>
           </div>
          
         </div>
