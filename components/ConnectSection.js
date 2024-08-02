@@ -7,7 +7,7 @@ export default function ConnectSection() {
  <section className="p-6 bg-slate-800 text-foreground">
   <h2 className="text-2xl text-white font-bold mb-4 text-center md:text-left">Connect</h2>
   <p className="text-muted-foreground text-white text-center mb-6">
-    Let's build networks! Connect with me on social platforms for collaborations, discussions, and updates.
+    Let&apos;s build networks! Connect with me on social platforms for collaborations, discussions, and updates.
   </p>
   <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
     <Link href="https://www.instagram.com/manas.css" passHref>
