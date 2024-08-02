@@ -1,0 +1,46 @@
+// experiece section old code
+const ExperienceSection = () => {
+    const [showMore, setShowMore] = useState(false);
+  
+    const toggleShowMore = () => {
+      setShowMore(!showMore);
+    };
+  
+    return (
+      <div className="max-w-2xl mx-auto p-6">
+        <h2 className="text-3xl text-white font-bold mb-4">Experience</h2>
+        <p className="text-muted-foreground text-white mb-6" style={{ fontFamily: '"Lucida Console", monospace' }}>
+          I work for places where we can create new products and address real-world challenges, not merely replicate existing solutions.
+        </p>
+        <div className="border-l-2 border-muted-foreground pl-4">
+          <div className="flex items-center mb-6">
+            <div className="h-4 w-4 rounded-full bg-blue-200 mr-2"></div>
+            <div className="flex-1 bg-blue-100 p-4 rounded-lg cursor-pointer">
+              <p className="font-semibold text-2xl">Indore Municipal Corporation</p>
+              <p className="text-muted-foreground">Nov 2022 - Present</p>
+              <p className="text-muted-foreground">Indore</p>
+              <span className="bg-blue-200 text-blue-800 rounded-full px-2 py-1 text-xs">Nov 2022 - Present</span>
+              <div className="text-muted-foreground mt-2">
+                {showMore ? (
+                  <p>
+                    Detailed description of the work done, including various projects, technologies used, and contributions made. This section can include multiple paragraphs with detailed information.
+                  </p>
+                ) : (
+                  <p>
+                    Brief overview of the work done. <br />
+                    {showMore ? "Show Less" : "Show More"}
+                  </p>
+                )}
+                <button
+                  className="mt-2 text-blue-500"
+                  onClick={toggleShowMore}
+                >
+                  {showMore ? "Show Less" : "Show More"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
