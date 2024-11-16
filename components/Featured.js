@@ -13,16 +13,18 @@ const NextArrow = (props) => {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center', 
-      
-        width: '30px', 
-        height: '40px', 
-        borderRadius: '60%', 
+        width: '50px', 
+        height: '50px', 
+        borderRadius: '50%', 
         zIndex: 10,
         position: 'absolute',
-        right: '-10px', // Position adjustment
+        right: '-15px', // Position adjustment
+        background: 'rgba(255, 255, 255, 0.7)', // Background for better visibility
+        cursor: 'pointer',
       }}
       onClick={onClick}
     >
+      <span style={{ fontSize: '24px', color: 'black' }}>→</span>
     </div>
   );
 };
@@ -37,16 +39,18 @@ const PrevArrow = (props) => {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center', 
-       
-        width: '30px', 
-        height: '40px', 
-        borderRadius: '60%', 
+        width: '50px', 
+        height: '50px', 
+        borderRadius: '50%', 
         zIndex: 10,
         position: 'absolute',
-        left: '-10px', // Position adjustment
+        left: '-15px', // Position adjustment
+        background: 'rgba(255, 255, 255, 0.7)', // Background for better visibility
+        cursor: 'pointer',
       }}
       onClick={onClick}
     >
+      <span style={{ fontSize: '24px', color: 'black' }}>←</span>
     </div>
   );
 };
@@ -56,35 +60,40 @@ const FeaturedSection = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, // Show 1 slide at a time to fit better on mobile
+    slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true, // Center the current slide
-    centerPadding: '0', // Adjust padding around center slide
+    centerMode: true,
+    centerPadding: '0',
     focusOnSelect: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     customPaging: (i) => (
-            <div className="w-3 h-3 bg-white rounded-full" /> // Custom dot styling
-          ),
-          dotsClass: "slick-dots",
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 2, // Show 2 slides on medium screens
-                slidesToScroll: 1,
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1, // Show 1 slide on small screens
-                slidesToScroll: 1,
-              }
-            },
-          ]
-        };
+      <div className="w-3 h-3 bg-white rounded-full" />
+    ),
+    dotsClass: "slick-dots",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ]
+  };
+
   const featuredItems = [
+    {
+      image: 'WhatsApp Image 2024-11-16 at 23.16.18_4aa4068a.jpg',
+      description: 'Hosted a live podcast at the Mega CEO Summit on September 17, 2024, at Medicaps University,Addressing 400+ Students, featuring CEOs and founders of emerging tech and edu startups.',
+    },
     {
       image: 'mayor idr.jpg',
       description: 'Mayor of Indore City - Shree Pushyamitra Bhargav ji, Appreciated me for Developing Scalable Solution/Product to improve Water Management Sytem of Indore. Many Functionalities will be implemented in official Website of Indore Municipal Corporation (IMC)',
@@ -97,7 +106,6 @@ const FeaturedSection = () => {
       image: 'Genai.jpg',
       description: 'Was just curious to know more about GenAi. Completed Google Cloud Study Jam GenAi course (earning 3 badges), before the deadline. ',
     },
-    // Add more items if needed
   ];
 
   return (

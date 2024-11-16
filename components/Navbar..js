@@ -46,10 +46,10 @@ const ResponsiveNavigation = () => {
                 </p>
                 <div className="text-center mb-4 text-slate-400 ">
                   <p className="text-2xl font-semibold ">Manas Jain</p>
-                  <p className="text-2xl">[Public Speaker, Coder]</p>
+                  <p className="text-2xl">[Public Speaker, Software Developer]</p>
                 </div>
               </div>
-              <img src="manasjainpic.jpg" alt="Profile" className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 bg-cover rounded-lg" />            </div>
+              <img src="manasdiwali.jpg" alt="Profile" className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 bg-cover rounded-lg" />            </div>
           </div>
          
         </div>
