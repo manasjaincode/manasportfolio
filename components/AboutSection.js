@@ -23,12 +23,8 @@ const AboutSection = () => {
           <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8" />
         </div>
       </Link>
-      <Link href="https://twitter.com/your-twitter-handle" passHref>
-        <div className="text-muted cursor-pointer">
-          <FontAwesomeIcon icon={faTwitter} className="w-8 h-8" />
-        </div>
-      </Link>
-      <Link href="https://www.instagram.com/manas.css" passHref>
+     
+      <Link href="https://www.instagram.com/manassjaiin" passHref>
         <div className="text-muted cursor-pointer">
           <FontAwesomeIcon icon={faInstagram} className="w-8 h-8" />
         </div>
@@ -39,9 +35,15 @@ const AboutSection = () => {
     </p>
     <div className="mt-4 text-white">
       <span className="font-bold text-lg">Hire me.</span>
-      <a href="/resume.pdf" className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg ml-2 font-bold text-lg">
-        Resume →
-      </a>
+      <a
+  href="/Manas Jain's Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg ml-2 font-bold text-lg"
+>
+  Resume →
+</a>
+
     </div>
     <div className="mt-6 flex flex-wrap gap-x-6 gap-y-6">
       <div className="relative inline-block">
