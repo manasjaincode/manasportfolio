@@ -28,7 +28,7 @@ export default function ConnectSection() {
           <Link href="https://www.linkedin.com/in/manas110/" passHref>
             <div className="flex items-center p-4 bg-slate-600 rounded-lg cursor-pointer transition-transform transform hover:scale-105">
               <img alt="linkedin-icon" src="LinkedIn.png" className="w-6 h-6 mr-3" />
-              <span className="text-xl md:text-base text-white overflow-hidden text-ellipsis">Manas Jain</span>
+              <span className="text-xl md:text-base text-white overflow-hidden text-ellipsis">Manas</span>
             </div>
           </Link>
 
