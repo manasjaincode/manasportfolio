@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const AboutSection = () => {
     return (
-<div className="pt-6 bg-slate-800">
+<div className="pt-6 bg-slate-950">
 <div className=" flex flex-col md:flex-row md:space-x-6 p-4">
   <div className="flex-shrink-0 mb-4 md:mb-0">
     <img src="manasjainattriggrs.jpg" alt="Manas Jain" className="w-80 h-80 rounded-lg" />

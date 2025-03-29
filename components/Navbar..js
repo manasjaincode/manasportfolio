@@ -6,8 +6,8 @@ import React, { useState } from 'react';
 const ResponsiveNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div id='home' className="bg-background text-foreground bg-slate-800">
-     <nav className="bg-slate-800 fixed top-0 left-0 w-full z-50 p-4">
+    <div id='home' className="bg-background text-foreground bg-black">
+     <nav className="bg-slate-900 fixed top-0 left-0 w-full z-50 p-4">
       <div className="flex items-center justify-between">
         <div className="text-white text-2xl font-bold">MANAS JAIN</div>
         <button
@@ -38,7 +38,7 @@ const ResponsiveNavigation = () => {
     </nav>
       <div>
         <div className="pt-32 p-6">
-          <div className="relative bg-slate-700 text-slate-400 p-12 rounded-lg flex flex-col items-center">
+          <div className="relative bg-black text-slate-400 p-12 rounded-lg flex flex-col items-center">
             <div className="flex md:flex-row flex-col-reverse justify-center items-center">
               <div className="flex flex-col items-center mb-8 md:mb-0 md:mr-8">
                 <p className="text-2xl italic font-serif text-center mb-4">
@@ -49,7 +49,7 @@ const ResponsiveNavigation = () => {
                   <p className="text-2xl">[Public Speaker, Software Developer]</p>
                 </div>
               </div>
-              <img src="manasdiwali.jpg" alt="Profile" className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 bg-cover rounded-lg" />            </div>
+              <img src="mpk.jpg" alt="Profile" className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 bg-cover rounded-lg" />            </div>
           </div>
          
         </div>

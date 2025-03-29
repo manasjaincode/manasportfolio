@@ -1,137 +1,139 @@
-import React from 'react';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ 
-        ...style, 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        width: '50px', 
-        height: '50px', 
-        borderRadius: '50%', 
-        zIndex: 10,
-        position: 'absolute',
-        right: '-15px', // Position adjustment
-        background: 'rgba(255, 255, 255, 0.7)', // Background for better visibility
-        cursor: 'pointer',
-      }}
-      onClick={onClick}
-    >
-      <span style={{ fontSize: '24px', color: 'black' }}>→</span>
-    </div>
-  );
-};
+const hackathons = [
+  {
+    title: "Hack'Ndore",
+    date: "July 2024",
+    description:
+      "Among top 10 Finalist teams, Built an innovative water management system solution for Indore, recognized by the Mayor of Indore.",
+    images: ["/mayor idr.jpg", "/hc.jpg", "/hackndore3.jpg"],
+    github: "https://github.com/your-repo/hackndore",
+    live: "https://your-live-demo-link.com/hackndore",
+  },
+  {
+    title: "Quasar 2.0",
+    date: "January 2025",
+    description:
+      "Designed an Ecosystem to bridge the industry-academia skill gap, empowering students with job-ready skills.",
+    images: ["/genai1.jpg", "/genai2.jpg", "/genai3.jpg"],
+    uiux: "https://your-uiux-link.com/quasar",
+  },
+  {
+    title: "Meta Buildathon",
+    date: "October 2024",
+    description:
+      "Developed a full-stack AI-driven social platform within 48 hours, winning Best UI/UX Award.",
+    images: ["/metabuild1.jpg", "/metabuild2.jpg", "/metabuild3.jpg"],
+    github: "https://github.com/your-repo/meta-buildathon",
+    live: "https://your-live-demo-link.com/meta-buildathon",
+  },
+];
 
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ 
-        ...style, 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        width: '50px', 
-        height: '50px', 
-        borderRadius: '50%', 
-        zIndex: 10,
-        position: 'absolute',
-        left: '-15px', // Position adjustment
-        background: 'rgba(255, 255, 255, 0.7)', // Background for better visibility
-        cursor: 'pointer',
-      }}
-      onClick={onClick}
-    >
-      <span style={{ fontSize: '24px', color: 'black' }}>←</span>
-    </div>
-  );
-};
+export default function HackathonSection() {
+  const [index, setIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
 
-const FeaturedSection = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '0',
-    focusOnSelect: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    customPaging: (i) => (
-      <div className="w-3 h-3 bg-white rounded-full" />
-    ),
-    dotsClass: "slick-dots",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      },
-    ]
+  const handleNextImage = () => {
+    setImageIndex((prev) => (prev + 1) % hackathons[index].images.length);
   };
 
-  const featuredItems = [
-    {
-      image: 'WhatsApp Image 2024-11-16 at 23.16.18_4aa4068a.jpg',
-      description: 'Hosted a live podcast at the Mega CEO Summit on September 17, 2024, at Medicaps University,Addressing 400+ Students, featuring CEOs and founders of emerging tech and edu startups.',
-    },
-    {
-      image: 'mayor idr.jpg',
-      description: 'Mayor of Indore City - Shree Pushyamitra Bhargav ji, Appreciated me for Developing Scalable Solution/Product to improve Water Management Sytem of Indore. Many Functionalities will be implemented in official Website of Indore Municipal Corporation (IMC)',
-    },
-    {
-      image: 'csslecture.jpg',
-      description: ' "Learn Coding by Teaching Your Peers". One of the best ways to gain a deeper understanding of code and logic is by solving the doubts of others. Took a few lectures in college on CSS and JS during 4th sem.'
-    },
-    {
-      image: 'Genai.jpg',
-      description: 'Was just curious to know more about GenAi. Completed Google Cloud Study Jam GenAi course (earning 3 badges), before the deadline. ',
-    },
-  ];
+  const handlePrevImage = () => {
+    setImageIndex((prev) =>
+      prev === 0 ? hackathons[index].images.length - 1 : prev - 1
+    );
+  };
 
   return (
-    <div id='featured' className="bg-slate-800 pt-24 py-8 flex justify-center">
-      <hr className="border-white mb-6" />
-      <div className="w-full md:w-3/4 lg:w-1/2 mx-auto px-4">
-        <h2 className="text-5xl text-slate-400 font-bold font-mono mb-6 p-8 text-center">Featured</h2>
-        <Slider {...settings} className="relative">
-          {featuredItems.map((item, index) => (
-            <div key={index} className="w-full p-4">
-              <div className="relative group">
-                <img
-                  src={item.image}
-                  alt={`Featured ${index + 1}`}
-                  className="rounded-lg w-full h-40 sm:h-60 md:h-80 lg:h-[50vh] object-cover transform transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-3 md:p-4 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm md:text-lg">{item.description}</p>
-                </div>
-              </div>
+    <div className="relative bg-black text-white py-16 px-6 flex flex-col items-center min-h-screen">
+      {/* Heading */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 neon-text">
+        <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          Hackathons
+        </span>
+      </h1>
+
+      {hackathons.map((hackathon, i) => (
+        <div
+          key={i}
+          className="w-full max-w-6xl flex flex-col lg:flex-row items-center gap-8 mb-16"
+        >
+          {/* Left: Image Slider */}
+          <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[350px] md:h-[400px]">
+            <motion.div
+              key={hackathon.images[imageIndex]}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.5 }}
+              className="absolute w-full h-full"
+            >
+              <Image
+                src={hackathon.images[imageIndex]}
+                alt={hackathon.title}
+                fill
+                className="object-cover rounded-xl shadow-lg"
+                priority
+              />
+            </motion.div>
+            {/* Arrows */}
+            <button
+              onClick={handlePrevImage}
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-800 p-2 rounded-full shadow-md"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={handleNextImage}
+              className="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-800 p-2 rounded-full shadow-md"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
+
+          {/* Right: Hackathon Details */}
+          <motion.div
+            key={hackathon.title}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.7 }}
+            className="w-full lg:w-1/2 text-center lg:text-left"
+          >
+            <h2 className="text-3xl sm:text-4xl font-extrabold neon-text mb-2">
+              {hackathon.title}
+            </h2>
+            <p className="text-md sm:text-lg text-gray-300 mb-4">
+              {hackathon.date}
+            </p>
+            <p className="text-lg sm:text-xl font-light leading-relaxed text-gray-200 mb-4">
+              {hackathon.description}
+            </p>
+            {/* Links */}
+            <div className="flex gap-4 mt-4">
+              <a
+                href={hackathon.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition"
+              >
+                <ExternalLink size={20} /> GitHub
+              </a>
+              <a
+                href={hackathon.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded-lg shadow-md hover:bg-blue-500 transition"
+              >
+                <ExternalLink size={20} /> View Live
+              </a>
             </div>
-          ))}
-        </Slider>
-      </div>
+          </motion.div>
+        </div>
+      ))}
     </div>
   );
-};
-
-export default FeaturedSection;
+}
