@@ -6,31 +6,32 @@ import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 
 const hackathons = [
   {
-    title: "Hack'Ndore",
-    date: "July 2024",
+    title: "MoonHack'25",
+    date: "March 2025",
     description:
-      "Among top 10 Finalist teams, Built an innovative water management system solution for Indore, recognized by the Mayor of Indore.",
-    images: ["/mayor idr.jpg", "/hc.jpg", "/hackndore3.jpg"],
-    github: "https://github.com/your-repo/hackndore",
-    live: "https://your-live-demo-link.com/hackndore",
+      "Developed an Eco-system {Club-DAO} for College Clubs/Societies to run on Code, not Choas. Made it to Final round out of 180+ Teams",
+    images: ["/MH1.jpg", "/MH2.jpg", "/MH3.jpg"],
+    github: "https://github.com/manasjaincode/Manas-ClubDAO",
+    live: "https://club-dao-delta.vercel.app/",
   },
   {
     title: "Quasar 2.0",
     date: "January 2025",
     description:
       "Designed an Ecosystem to bridge the industry-academia skill gap, empowering students with job-ready skills.",
-    images: ["/genai1.jpg", "/genai2.jpg", "/genai3.jpg"],
-    uiux: "https://your-uiux-link.com/quasar",
+    images: ["/quasar.jpg", "/M2.jpg", "/M3.jpg"],
+    uiux: "https://manasjaincode.wixstudio.com/markettrails",
   },
   {
-    title: "Meta Buildathon",
-    date: "October 2024",
+    title: "Hack'Ndore",
+    date: "July 2024",
     description:
-      "Developed a full-stack AI-driven social platform within 48 hours, winning Best UI/UX Award.",
-    images: ["/metabuild1.jpg", "/metabuild2.jpg", "/metabuild3.jpg"],
-    github: "https://github.com/your-repo/meta-buildathon",
-    live: "https://your-live-demo-link.com/meta-buildathon",
+      "Among top 10 Finalist teams, Built an innovative water management system solution for Indore, recognized by the Mayor of Indore.",
+    images: ["/mayor idr.jpg", "/hc.jpg", "/M4.jpg"],
+    github: "https://github.com/manasjaincode/ThreatTrackers",
   },
+  
+ 
 ];
 
 export default function HackathonSection() {
@@ -114,22 +115,36 @@ export default function HackathonSection() {
             </p>
             {/* Links */}
             <div className="flex gap-4 mt-4">
-              <a
-                href={hackathon.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition"
-              >
-                <ExternalLink size={20} /> GitHub
-              </a>
-              <a
-                href={hackathon.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded-lg shadow-md hover:bg-blue-500 transition"
-              >
-                <ExternalLink size={20} /> View Live
-              </a>
+              {hackathon.github && (
+                <a
+                  href={hackathon.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition"
+                >
+                  <ExternalLink size={20} /> GitHub
+                </a>
+              )}
+              {hackathon.uiux && (
+                <a
+                  href={hackathon.uiux}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition"
+                >
+                  <ExternalLink size={20} /> UI/UX
+                </a>
+              )}
+              {hackathon.live && (
+                <a
+                  href={hackathon.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition"
+                >
+                  <ExternalLink size={20} /> View Live
+                </a>
+              )}
             </div>
           </motion.div>
         </div>

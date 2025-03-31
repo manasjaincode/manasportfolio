@@ -9,7 +9,7 @@ const ResponsiveNavigation = () => {
     <div id='home' className="bg-background text-foreground bg-black">
      <nav className="bg-slate-900 fixed top-0 left-0 w-full z-50 p-4">
       <div className="flex items-center justify-between">
-        <div className="text-white text-2xl font-bold">MANAS JAIN</div>
+        <div className="text-gray-400 text-2xl font-bold">MANAS JAIN</div>
         <button
           className="text-white text-2xl md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -20,19 +20,19 @@ const ResponsiveNavigation = () => {
       </div>
       <div className={`md:flex md:items-center md:space-x-4 mt-4 md:mt-0 ${isOpen ? 'block' : 'hidden'}`}>
       <Link href="#home" passHref>
-        <span className="text-white text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Home</span>
+        <span className="text-gray-300 text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Home</span>
       </Link>
       <Link href="#experience" passHref>
-        <span className="text-white text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Experience</span>
+        <span className="text-gray-300 text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Experience</span>
       </Link>
       <Link href="#projects" passHref>
-        <span className="text-white text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Projects</span>
+        <span className="text-gray-300 text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Projects</span>
       </Link>
       <Link href="#connect" passHref>
-        <span className="text-white text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Connect</span>
+        <span className="text-gray-300 text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Connect</span>
       </Link>
       <Link href="#featured" passHref>
-        <span className="text-white text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Featured</span>
+        <span className="text-gray-300 text-lg hover:bg-slate-700 transition-colors duration-300 block py-2 px-4 rounded">Featured</span>
       </Link>
     </div>
     </nav>
