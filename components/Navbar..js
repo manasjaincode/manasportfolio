@@ -54,7 +54,7 @@ const ResponsiveNavigation = () => {
         &quot;Code articulates in logic and precision, while my voice echoes with passion and persuasion.&quot;
       </p>
       <p className="text-xl text-slate-300 font-semibold">Manas Jain</p>
-      <p className="text-md text-slate-400">[Public Speaker, Coder]</p>
+      <p className="text-md text-slate-400">[Public Speaker, Software Developer]</p>
     </div>
 
   </div>
