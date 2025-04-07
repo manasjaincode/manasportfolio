@@ -38,19 +38,24 @@ const ResponsiveNavigation = () => {
     </nav>
       <div>
         <div className="pt-32 p-6">
-          <div className="relative bg-black text-slate-400 p-12 rounded-lg flex flex-col items-center">
-            <div className="flex md:flex-row flex-col-reverse justify-center items-center">
-              <div className="flex flex-col items-center mb-8 md:mb-0 md:mr-8">
-                <p className="text-2xl italic font-serif text-center mb-4">
-                &quot;Code articulates in logic and precision, while my voice echoes with passion and persuasion.&quot;
-                </p>
-                <div className="text-center mb-4 text-slate-400 ">
-                  <p className="text-2xl font-semibold ">Manas Jain</p>
-                  <p className="text-2xl">[Public Speaker, Software Developer]</p>
-                </div>
-              </div>
-              <img src="mpk.jpg" alt="Profile" className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 bg-cover rounded-lg" />            </div>
-          </div>
+        <div className="relative bg-black text-slate-400 p-12 rounded-lg flex flex-col items-center">
+  <div className="flex flex-col md:flex-row justify-center items-center">
+    <img
+      src="manasprompt.jpg"
+      alt="Profile"
+      className="w-full max-w-xs md:max-w-sm lg:max-w-md mb-4 md:mb-0 md:mr-8 rounded-lg bg-cover"
+    />
+    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+      <p className="text-2xl italic font-serif mb-4">
+        &quot;Code articulates in logic and precision, while my voice echoes with passion and persuasion.&quot;
+      </p>
+      <div className="mb-4 text-slate-400">
+
+      </div>
+    </div>
+  </div>
+</div>
+
          
         </div>
       </div>
