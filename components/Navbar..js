@@ -6,8 +6,8 @@ const ResponsiveNavigation = () => {
 
   return (
     <div id='home' className="bg-background text-foreground bg-black">
-      <nav className="bg-slate-900 fixed top-0 left-0 w-full z-50 p-4">
-        <div className="flex items-center justify-between">
+<nav className="bg-slate-950/70 backdrop-blur-md fixed top-0 left-0 w-full z-50 p-4">
+<div className="flex items-center justify-between">
           <div className="text-gray-400 text-2xl font-bold">MANAS JAIN</div>
           <button
             className="text-white text-2xl md:hidden focus:outline-none"
