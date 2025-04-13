@@ -33,7 +33,7 @@ const ProjectSection = () => {
   ];
 
   return (
-    <div id="projects" className="p-8 pt-28 bg-slate-800">
+    <div id="projects" className="p-8 pt-28 bg-slate-950">
       <h2 className="text-2xl font-bold text-white mb-4">Tech Projects</h2>
       <div className="bg-slate-900 p-6 text-white rounded-lg shadow-md">
         {projects.slice(0, showAll ? projects.length : 1).map((project) => (
