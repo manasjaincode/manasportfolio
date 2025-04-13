@@ -31,9 +31,10 @@ export default function AboutPage() {
         {/* Text Section */}
         <div className="flex-1 flex items-center justify-center w-full">
           <div className="max-w-2xl w-full">
-            <p className="text-[#00ff9f] text-2xl md:text-3xl font-semibold leading-snug mb-4">
-              "Code articulates in logic and precision, while my voice echoes with passion and persuasion.":
-            </p>
+          <p className="text-[#00ff9f] text-2xl md:text-3xl font-semibold leading-snug mb-4">
+  &ldquo;Code articulates in logic and precision, while my voice echoes with passion and persuasion.&rdquo;:
+</p>
+
             <p className="text-xl font-semibold mb-2">Manas Jain</p>
             <p className="text-[#a3a3a3] text-lg">
               [<span className="text-[#b3b3b3]">Software Developer</span> , <span className="text-[#b3b3b3]">Public Speaker</span>]
