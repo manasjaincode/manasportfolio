@@ -20,7 +20,7 @@ export default function AboutPage() {
         {/* Image Section */}
         <div className="w-full max-w-sm flex justify-center ">
           <Image
-            src="/latest.jpg"
+            src="/techdev.jpg"
             alt="Tech Developer Toy"
             width={500}
             height={500}

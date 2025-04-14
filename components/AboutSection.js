@@ -5,14 +5,14 @@ import Link from 'next/link';
 
 const AboutSection = () => {
     return (
-<div className="pt-6 bg-slate-950">
+<div className="pt-6 bg-[#111]">
 <div className=" flex flex-col md:flex-row md:space-x-6 p-4">
   <div className="flex-shrink-0 mb-4 md:mb-0">
     <img src="manasjainattriggrs.jpg" alt="Manas Jain" className="w-80 h-80 rounded-lg" />
   </div>
   <div className="flex-1">
     <h1 className="text-3xl font-bold text-white">Manas Jain <span className="text-muted">[he/him]</span></h1>
-    <div className="flex space-x-4 mt-2 text-white">
+    <div className="flex space-x-4 mt-2 text-[#00ff9f]">
       <Link href="https://github.com/manasjaincode" passHref>
         <div className="text-muted cursor-pointer">
           <FontAwesomeIcon icon={faGithub} className="w-8 h-8" />
@@ -33,7 +33,7 @@ const AboutSection = () => {
     <p className="mt-4 text-muted-foreground text-white" style={{ fontFamily: '"Lucida Console", monospace' }}>
       Hey there! I am a Fresher, aspiring Software Engineer and a Public Speaker, who relentlessly learns new tech daily and connects with large audiences on stage. Thrives on connecting with tech enthusiasts, tackling real-world problems, and propelling enduring success.
     </p>
-    <div className="mt-4 text-white">
+    <div className="mt-4 text-[#00ff9f]">
       <span className="font-bold text-lg">Hire me.</span>
       <a
   href="/Manas Jain's Resume.pdf"
