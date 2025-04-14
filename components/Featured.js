@@ -59,9 +59,12 @@ export default function HackathonSection() {
   };
 
   return (
-    <div className="bg-gray-950 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4">
-        {hackathons.map((hackathon, i) => (
+    <div className="bg-gray-950 py-16">
+    <h1 className="text-3xl md:text-4xl font-bold text-center mb-10" style={{ color: "#00ff9f" }}>
+      Hackathons
+    </h1>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4">    {hackathons.map((hackathon, i) => (
           <div
             key={i}
             className="bg-gray-900 p-4 rounded-xl shadow-lg flex flex-col items-center w-full max-w-[320px] mx-auto"
@@ -113,7 +116,7 @@ export default function HackathonSection() {
                 {hackathon.description}
               </p>
 
-              <div className="flex justify-center gap-2 flex-wrap text-sm">
+              <div className="flex justify-center gap-2 flex-wrap text-slate-300 text-sm">
                 {hackathon.github && (
                   <a
                     href={hackathon.github}

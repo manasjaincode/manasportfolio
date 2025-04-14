@@ -4,6 +4,7 @@ import ExperienceSection from '../../components/ExperienceSection';
 import Featured from '../../components/Featured';
 import ProjectSection from '../../components/ProjectSection';
 import ConnectSection from '../../components/ConnectSection';
+import PublicSpeaking from '../../components/PublicSpeaking';
 export default function Home() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutSection/>
       <Featured/>
       <ExperienceSection/>
+      <PublicSpeaking/>
       <ProjectSection/>
       <ConnectSection/>
       
