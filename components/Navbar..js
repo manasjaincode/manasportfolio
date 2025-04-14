@@ -7,10 +7,10 @@ export default function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#111] text-white px-6 py-12 overflow-hidden">
+    <div className="min-h-screen bg-[#111] text-white  px-6 py-12 overflow-hidden">
       {/* Navbar */}
       <nav className="flex justify-between items-center text-lg font-semibold mb-12 relative">
-        <span className="text-[#00ff9f] text-xl">Code with Manas</span>
+        <span className="text-[#00ff9f] text-3xl text-bold">Code with Manas 🧑🏼‍💻 </span>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
