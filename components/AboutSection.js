@@ -13,18 +13,18 @@ const AboutSection = () => {
   <div className="flex-1">
     <h1 className="text-3xl font-bold text-white">Manas Jain <span className="text-muted">[he/him]</span></h1>
     <div className="flex space-x-4 mt-2 text-[#00ff9f]">
-      <Link href="https://github.com/manasjaincode" passHref>
+      {/* <Link href="https://github.com/manasjaincode" passHref>
         <div className="text-muted cursor-pointer">
           <FontAwesomeIcon icon={faGithub} className="w-8 h-8" />
-        </div>
-      </Link>
+        </div> */}
+      {/* </Link> */}
       <Link href="https://www.linkedin.com/in/manas110/" passHref>
         <div className="text-muted cursor-pointer">
           <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8" />
         </div>
       </Link>
      
-      <Link href="https://www.instagram.com/manassjaiin" passHref>
+      <Link href="https://www.instagram.com/manasjaiinn" passHref>
         <div className="text-muted cursor-pointer">
           <FontAwesomeIcon icon={faInstagram} className="w-8 h-8" />
         </div>
