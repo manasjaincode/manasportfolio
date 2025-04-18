@@ -11,7 +11,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#111] text-white px-6 py-12 overflow-hidden">
       {/* Navbar */}
       <nav className="flex justify-between items-center text-lg font-semibold mb-12 relative">
-        <span className="text-[#00ff9f] text-3xl font-semibold">Code with Manas 🧑🏼‍💻 </span>
+        <span className="text-gray-400 text-3xl font-semibold">Code with Manas 🧑🏼‍💻 </span>
 
         <div className="hidden md:flex space-x-6">
           <a href="#" className="hover:text-[#00ff9f] transition">HOME</a>
@@ -39,15 +39,7 @@ export default function AboutPage() {
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10 max-w-6xl mx-auto">
         {/* Image */}
-        <div className="w-72 md:w-[22rem] flex justify-center items-center rounded-3xl overflow-hidden border-2 border-gray-950 shadow-lg">
-          <Image
-            src="/03.jpg"
-            alt="Tech Developer Toy"
-            width={352}
-            height={352}
-            className="object-contain w-full h-auto rounded-3xl"
-          />
-        </div>
+        
 
         {/* Text Content with Line by Line Animation */}
         <div className="flex-1 flex items-center justify-center w-full px-4 text-center flex-col space-y-4">
@@ -75,8 +67,17 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
           >
-            [Public Speaker, Coder]
+            [Public Speaker, Software Developer]
           </motion.p>
+        </div>
+        <div className="w-72 md:w-[22rem] flex justify-center items-center rounded-3xl overflow-hidden border-2 border-gray-950 shadow-lg">
+          <Image
+            src="/ruppee.png"
+            alt="Tech Developer Toy"
+            width={352}
+            height={352}
+            className="object-contain w-full h-auto rounded-3xl"
+          />
         </div>
       </div>
     </div>
