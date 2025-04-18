@@ -61,7 +61,7 @@ export default function HackathonSection() {
   return (
     <div className="bg-gray-950 py-16">
     <h1 className="text-3xl md:text-4xl font-bold text-center mb-10" style={{ color: "#00ff9f" }}>
-      Hackathons
+      Hackathons 📈
     </h1>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4">    {hackathons.map((hackathon, i) => (
@@ -108,7 +108,7 @@ export default function HackathonSection() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <h2 className="text-xl font-bold neon-text mb-1">
+              <h2 className="text-xl font-bold  text-gray-300 mb-1">
                 {hackathon.title}
               </h2>
               <p className="text-xs text-gray-400 mb-1">{hackathon.date}</p>

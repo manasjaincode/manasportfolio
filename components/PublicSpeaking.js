@@ -5,10 +5,12 @@ import Image from 'next/image';
 
 export default function PublicSpeaking() {
   const images = [
+    '/22.jpg', '/33.jpg', '/44.jpg', '/55.jpg', '/66.jpg',
+    '/11.jpg',
     '/p1.jpg',
-    '/p2.jpg',
-    '/p3.jpg',
-    '/p4.jpg',
+   
+    
+   
     // Add more images as needed
   ];
 
@@ -18,20 +20,20 @@ export default function PublicSpeaking() {
       quote: "When CEOs listened, I spoke with vision.",
     },
     {
-      title: "TEDx Youth",
-      quote: "Ideas worth spreading… I didn’t just speak, I ignited minds.",
+      title: "Tech Lecturer",
+      quote: "Held 5+ lectures on AI and Development—not to instruct, but to inspire a generation of builders.",
     },
     {
       title: "HackNdore 2.0",
       quote: "Code on one side, crowd on the other. I bridged both.",
     },
     {
-      title: "IEEE Inspire '23",
-      quote: "The mic wasn’t a tool — it was an extension of my thought.",
+      title: "The Pulse of Gen Z",
+      quote: "In a hall full of wisdom, I asked Dr. Bharat Rawat — a celebrated Cardiologist — how Gen Z can care for their hearts in a world that never slows down. The question wasn’t just about health, it was about hope.",
     },
     {
-      title: "Atharv Vani",
-      quote: "From the stage, every pause felt like power.",
+      title: "SaaS Without Strings",
+      quote: "In front of curious minds in University, I unveiled my vision — a URL Shortener built from scratch with self-powered APIs, proving that innovation doesn’t need to lean on third parties.",
     },
   ];
 
