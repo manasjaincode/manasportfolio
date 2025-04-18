@@ -24,7 +24,7 @@ export default function PublicSpeaking() {
       quote: "Held 5+ lectures on AI and Development—not to instruct, but to inspire a generation of builders.",
     },
     {
-      title: "HackNdore 2.0",
+      title: "HackN'dore 2024",
       quote: "Code on one side, crowd on the other. I bridged both.",
     },
     {
