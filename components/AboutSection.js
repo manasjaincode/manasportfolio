@@ -8,7 +8,12 @@ const AboutSection = () => {
 <div className="pt-6 bg-[#111]">
 <div className=" flex flex-col md:flex-row md:space-x-6 p-4">
   <div className="flex-shrink-0 mb-4 md:mb-0">
-    <img src="manasjainattriggrs.jpg" alt="Manas Jain" className="w-80 h-80 rounded-lg" />
+  <img
+  src="666.jpg"
+  alt="Manas Jain"
+  className="w-full max-w-xs aspect-square object-cover rounded-lg"
+/>
+
   </div>
   <div className="flex-1">
     <h1 className="text-3xl font-bold text-white">Manas Jain <span className="text-muted">[he/him]</span></h1>
