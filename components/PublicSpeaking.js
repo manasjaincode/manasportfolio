@@ -14,28 +14,7 @@ export default function PublicSpeaking() {
     // Add more images as needed
   ];
 
-  const events = [
-    {
-      title: "Mega CEO Summit 2024",
-      quote: "When CEOs listened, I spoke with vision.",
-    },
-    {
-      title: "Tech Lecturer",
-      quote: "Held 5+ lectures on AI and Development—not to instruct, but to inspire a generation of builders.",
-    },
-    {
-      title: "HackN'dore 2024",
-      quote: "Code on one side, crowd on the other. I bridged both.",
-    },
-    {
-      title: "The Pulse of Gen Z",
-      quote: "In a hall full of wisdom, I asked Dr. Bharat Rawat — a celebrated Cardiologist — how Gen Z can care for their hearts in a world that never slows down. The question wasn’t just about health, it was about hope.",
-    },
-    {
-      title: "SaaS Without Strings",
-      quote: "In front of curious minds in University, I unveiled my vision — a URL Shortener built from scratch with self-powered APIs, proving that innovation doesn’t need to lean on third parties.",
-    },
-  ];
+ 
 
   const settings = {
     infinite: true,
@@ -105,17 +84,39 @@ export default function PublicSpeaking() {
       </div>
 
       {/* Dynamic Event Highlights */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {events.map((event, index) => (
-          <div
-            key={index}
-            className="bg-[#1a1a1a] hover:bg-[#00ff9f] hover:text-black transition-all duration-300 p-6 rounded-xl shadow-lg transform hover:-translate-y-1"
-          >
-            <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-            <p className="text-sm italic">{event.quote}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+      <div className="max-w-5xl mx-auto bg-[#1a1a1a] text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8">
+  {/* Trophy Image */}
+  <div className="w-full md:w-1/3 flex justify-center">
+    <img 
+      src="/manastrophy.jpg" 
+      alt="Manas Trophy" 
+      className="rounded-2xl shadow-lg object-cover w-64 h-64 md:w-72 md:h-72"
+    />
+  </div>
+
+  {/* Achievements List */}
+  <div className="w-full md:w-2/3">
+    <ul className="list-disc list-inside space-y-4 text-lg md:text-xl font-semibold leading-relaxed">
+      <li>
+        Hosted <span className="text-[#00ff9f] font-bold">5+ public tech events</span> with 
+        <span className="text-[#00ff9f] font-bold"> 1,200+ attendees</span>, igniting minds with ideas that build and inspire.
+      </li>
+      <li>
+        Mentored peers in <span className="text-[#00ff9f] font-bold">system design fundamentals</span>, including scalable URL shorteners—
+        enhancing architectural thinking in <span className="text-[#00ff9f] font-bold">100+ students</span>.
+      </li>
+      <li>
+        Twice a <span className="text-[#00ff9f] font-bold">hackathon finalist and team lead</span>, navigating high-pressure innovation with clarity and synergy.
+      </li>
+      <li>
+        Recognized in <span className="text-[#00ff9f] font-bold">3+ MUN Conferences</span> for eloquence, diplomacy, and impactful resolution framing.
+      </li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+    
   );
 }

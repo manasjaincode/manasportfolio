@@ -89,7 +89,7 @@ const AboutSection = () => {
     <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
   </div>
   <div className="relative group">
-    <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
+    <img src="https://skillicons.dev/icons?i=postgresql" alt="PostgreSQL" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
   </div>
   <div className="relative group">
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
@@ -100,6 +100,16 @@ const AboutSection = () => {
   <div className="relative group">
     <img src="https://skillicons.dev/icons?i=postman" alt="Postman" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
   </div>
+  <div className="relative group">
+    <img src="https://skillicons.dev/icons?i=nestjs" alt="Nest.js" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
+  </div>
+  <div className="relative group">
+    <img src="https://skillicons.dev/icons?i=aws" alt="AWS" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
+  </div>
+  <div className="relative group">
+    <img src="https://skillicons.dev/icons?i=docker" alt="Docker" className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
+  </div>
+  
 </div>
 </div>
 
