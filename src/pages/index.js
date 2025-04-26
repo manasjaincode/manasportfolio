@@ -2,8 +2,7 @@ import Navbar from '../../components/Navbar.';
 import AboutSection from '../../components/AboutSection';
 import ExperienceSection from '../../components/ExperienceSection';
 import Featured from '../../components/Hackathons';
-// import ProjectSection from '../../components/ProjectSection';
-// import ConnectSection from '../../components/ConnectSection';
+import ProjectSection from '../../components/ProjectSection';
 import PublicSpeaking from '../../components/PublicSpeaking';
 export default function Home() {
   return (
@@ -13,8 +12,8 @@ export default function Home() {
       <Featured/>
       <ExperienceSection/>
       <PublicSpeaking/>
-      {/* <ProjectSection/>
-      <ConnectSection/> */}
+      {<ProjectSection/>}
+  
       
     </div>
   );
