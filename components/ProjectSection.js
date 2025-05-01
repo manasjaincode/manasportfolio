@@ -5,24 +5,52 @@ import Image from 'next/image';
 export default function Projects() {
   const projects = [
     {
-      title: 'Project Title 1',
-      image: '/project1.jpg',
-      description: 'Brief description of project 1 goes here. Make it crisp and impactful.',
+      title: 'ShortCraze',
+      image: '/shortcrazeui.jpg',
+      description: (
+        <>
+          Scalable URL shortener with custom keywords, QR generation & global analytics. <br />
+          <a href="https://shortcraze-3377.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#00ff9f] underline">
+            Live Link
+          </a>
+        </>
+      ),
     },
     {
-      title: 'Project Title 2',
-      image: '/project2.jpg',
-      description: 'Brief description of project 2 goes here. Make it crisp and impactful.',
+      title: 'ClubDAO',
+      image: '/clubdaoui.jpg',
+      description: (
+        <>
+          DAO prototype for fair, code-based student club governance with blockchain-inspired voting. <br />
+          <a href="https://club-dao-delta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#00ff9f] underline">
+            Live Link
+          </a>
+        </>
+      ),
     },
     {
-      title: 'Project Title 3',
-      image: '/project3.jpg',
-      description: 'Brief description of project 3 goes here. Make it crisp and impactful.',
+      title: 'Jal-Sanjeevni',
+      image: '/jalsanjeevniui.jpg',
+      description: (
+        <>
+          Tech-driven solution for Indore’s water management, recognized by Mayor Pushyamitra Bhargav. <br />
+          <a href="https://github.com/manasjaincode/ThreatTrackers" target="_blank" rel="noopener noreferrer" className="text-[#00ff9f] underline">
+            GitHub Link
+          </a>
+        </>
+      ),
     },
     {
-      title: 'Project Title 4',
-      image: '/project4.jpg',
-      description: 'Brief description of project 4 goes here. Make it crisp and impactful.',
+      title: 'MarketTrails',
+      image: '/marketrailsui.jpg',
+      description: (
+        <>
+          Designed a UI/UX prototype to bridge the Industry-Academia gap. <br />
+          <a href="https://manasjaincode.wixstudio.com/markettrails" target="_blank" rel="noopener noreferrer" className="text-[#00ff9f] underline">
+            UI/UX Link
+          </a>
+        </>
+      ),
     },
   ];
 
@@ -31,15 +59,15 @@ export default function Projects() {
       {/* Heading */}
       <div className="flex items-center justify-center gap-3 mb-10">
         <h2 className="text-[#00ff9f] text-[26px] md:text-[34px] font-bold uppercase">
-          My Projects
+          My Projects 👽
         </h2>
-        <Image
+        {/* <Image
           src="/project-icon.png"
           alt="Project Icon"
           width={36}
           height={36}
           className="w-[26px] md:w-[34px] h-[26px] md:h-[34px]"
-        />
+        /> */}
       </div>
 
       {/* Grid Layout */}
