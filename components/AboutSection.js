@@ -9,7 +9,7 @@ const AboutSection = () => {
 <div className=" flex flex-col md:flex-row md:space-x-6 p-4">
   <div className="flex-shrink-0 mb-4 md:mb-0">
   <img
-  src="666.jpg"
+  src="manasjainattriggrs.jpg"
   alt="Manas Jain"
   className="w-full max-w-xs aspect-square object-cover rounded-lg"
 />
@@ -36,8 +36,7 @@ const AboutSection = () => {
       </Link>
     </div>
     <p className="mt-4 text-muted-foreground text-white" style={{ fontFamily: '"Lucida Console", monospace' }}>
-      Hey there! I am a Fresher, aspiring Software Engineer and a Public Speaker, who relentlessly learns new tech daily and connects with large audiences on stage. Thrives on connecting with tech enthusiasts, tackling real-world problems, and propelling enduring success.
-    </p>
+A Problem-solver specializing in full-stack product engineering, Building high-performance tech products that directly impact a company’s business value. Brings articulate communication and public speaking, bridging the gap between tech and business. <b><br></br><br></br>Eager to Learn, Ready to Unlearn, Excited to Grow.   </b>  </p>
     <div className="mt-4 text-[#00ff9f]">
       <span className="font-bold text-lg">Hire me.</span>
       <a
