@@ -1,60 +1,24 @@
 'use client';
-import React, { useState } from 'react';
-import { Briefcase, X } from 'lucide-react'; // X icon for closing the modal
-
-// Simple Modal Component
-const ImageModal = ({ src, onClose }) => {
-  if (!src) return null; // Don't render if no image source is provided
-
-  return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-      onClick={onClose} // Close modal when clicking outside the image
-    >
-      <div 
-        className="relative bg-[#1a1a1a] p-4 rounded-lg shadow-xl max-w-3xl max-h-[90vh] overflow-hidden flex flex-col items-center justify-center"
-        onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside content
-      >
-        <button 
-          onClick={onClose} 
-          className="absolute top-3 right-3 text-white hover:text-[#00ff9f] p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors"
-          aria-label="Close modal"
-        >
-          <X size={24} />
-        </button>
-        <img 
-          src={src} 
-          alt="Enlarged view" 
-          className="max-w-full max-h-[80vh] object-contain rounded-md" 
-        />
-      </div>
-    </div>
-  );
-};
-
+import React from 'react';
+import { Briefcase } from 'lucide-react';
 
 export default function ExperienceSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageSrc, setCurrentImageSrc] = useState('');
-
-  const openModal = (src) => {
-    setCurrentImageSrc(src);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setCurrentImageSrc('');
-  };
-
   const experiences = [
     {
       role: "IT Trainee",
       company: "Arihant Capital Markets Ltd",
       description: "India's one of the largest stock broking firms.",
-      duration: "Feb 2023 - May 2023", 
-      techIcons: [],
-      logo: "/acml.jpg", // Make sure 'acml.jpg' is in your 'public' folder
+      duration: "Feb 2023 - May 2023",
+      techIcons: [
+        { name: "API Development", src: "https://cdn-icons-png.flaticon.com/512/3503/3503893.png" }, // API Icon from Flaticon
+        { name: "Tailwind CSS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+        { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Postman", src: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+        { name: "WebSockets", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/WebSocket_Logo.svg/1200px-WebSocket_Logo.svg.png" },
+        { name: "Cron Jobs", src: "https://www.svgrepo.com/show/353723/cron.svg" },
+      ],
+      logo: "/acml.jpg",
+      altText: "My photo at Arihant Capital Markets Ltd."
     },
     {
       role: "Full Stack Development Intern",
@@ -63,70 +27,74 @@ export default function ExperienceSection() {
       duration: "Jun 2024 - Aug 2024",
       techIcons: [
         { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Node.js", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "MongoDB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
         { name: "GitHub", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
         { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
       ],
-      logo: "https://via.placeholder.com/150x150?text=FSD+Intern", 
+      logo: "https://via.placeholder.com/600x400?text=Triggrs+Web+Solutions+Logo",
+      altText: "Triggrs Web Solutions company logo."
     },
   ];
 
   return (
-    <div className="bg-black py-16 px-6 text-white">
+    <div className="bg-black py-16 px-4 sm:px-8 lg:px-12 text-white">
       {/* Section Heading */}
-      <div className="flex items-center justify-center gap-3 mb-10">
-        <h2 className="text-[#00ff9f] text-[26px] md:text-[34px] font-bold">
+      <div className="flex items-center justify-center gap-3 mb-12">
+        <h2 className="text-[#00ff9f] text-3xl md:text-4xl lg:text-5xl font-bold">
           Experience 🧩
         </h2>
       </div>
 
-      {/* Responsive Card Section */}
-      <div className="flex flex-col md:flex-row items-stretch justify-center gap-6">
+      {/* Experience Cards - Each covering full width */}
+      <div className="flex flex-col gap-16">
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="w-full md:w-5/12 bg-[#1a1a1a] border border-[#333] rounded-2xl p-6 mb-6 md:mb-0 hover:text-[#00ff9f] transition-all duration-300 shadow-lg transform hover:-translate-y-1 flex flex-col justify-between"
+            className="w-full p-6 sm:p-8 md:p-10 lg:p-12 text-white rounded-2xl"
           >
-            {/* Image above content */}
-            <div className="mb-6 flex justify-center">
-              <img 
-                src={exp.logo} 
-                alt={exp.role === "IT Trainee" ? "My photo at Arihant Capital" : "Company Logo"} 
-                className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-[#00ff9f] shadow-lg cursor-pointer transition-transform duration-200 hover:scale-105" // Added cursor-pointer and hover effect
-                onClick={() => openModal(exp.logo)} // Open modal on click
-              />
-            </div>
-            
-            <div> {/* Wrapper for text content */}
-              <div className="flex items-center mb-2">
-                <h3 className="text-xl font-semibold">{exp.role}</h3>
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+              {/* Image Section - Large and Responsive */}
+              <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/3 xl:w-1/4">
+                <img
+                  src={exp.logo}
+                  alt={exp.altText}
+                  className="w-full h-auto object-cover rounded-lg shadow-2xl"
+                />
               </div>
-              <p className="text-sm text-gray-400">{exp.company}</p>
-              <p className="text-sm text-gray-400 mb-2">{exp.description}</p>
-              <p className="text-sm text-gray-400">{exp.duration}</p>
-            </div>
 
-            {/* Tech Icons - only render if there are any */}
-            {exp.techIcons && exp.techIcons.length > 0 && (
-              <div className="mt-4 flex flex-wrap gap-4">
-                {exp.techIcons.map((tech, idx) => (
-                  <img
-                    key={idx}
-                    src={tech.src}
-                    alt={tech.name}
-                    title={tech.name}
-                    className="w-8 h-8 rounded-lg hover:scale-110 transition-transform duration-300 bg-white p-1"
-                  />
-                ))}
+              {/* Text Content Section */}
+              <div className="flex-grow text-center md:text-left">
+                <div className="mb-4">
+                  <h3 className="text-3xl md:text-4xl font-extrabold text-[#00ff9f] mb-2">{exp.role}</h3>
+                  <p className="text-lg md:text-xl text-gray-300 mb-1">{exp.company}</p>
+                  <p className="text-base md:text-lg text-gray-400 mb-3">{exp.description}</p>
+                  <p className="text-base md:text-lg text-gray-400 font-medium">{exp.duration}</p>
+                </div>
+
+                {/* Tech Icons - only render if there are any */}
+                {exp.techIcons && exp.techIcons.length > 0 && (
+                  <div className="mt-6 flex flex-wrap gap-5 justify-center md:justify-start">
+                    {exp.techIcons.map((tech, idx) => (
+                      <div
+                        key={idx}
+                        className="group relative flex flex-col items-center"
+                      >
+                        <img
+                          src={tech.src}
+                          alt={tech.name}
+                          title={tech.name} // This attribute is essential for the default browser tooltip
+                          className="w-10 h-10 rounded-lg transition-transform duration-300 bg-white p-1 hover:scale-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>
-
-      {/* Image Modal Component */}
-      {isModalOpen && <ImageModal src={currentImageSrc} onClose={closeModal} />}
     </div>
   );
 }
