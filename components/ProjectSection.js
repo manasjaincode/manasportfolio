@@ -69,7 +69,7 @@ export default function IndustryProjects() {
       image: '/jalsanjeevniui.jpg',
       description: (
         <>
-          Tech-driven solution for Indore’s water management, recognized by Mayor Pushyamitra Bhargav.
+          Tech-driven solution for Indore&apos;s water management, recognized by Mayor Pushyamitra Bhargav.
           <br />
         </>
       ),
@@ -149,7 +149,7 @@ export default function IndustryProjects() {
           width={250} // Significantly smaller base width
           height={150} // Significantly smaller base height
           className="rounded-sm w-full h-auto object-cover shadow-xs"
-          /* Minimal rounding, tiny shadow */ // FIX: Comment moved outside the className string
+          /* Minimal rounding, tiny shadow */
         />
       </div>
 
@@ -191,7 +191,7 @@ export default function IndustryProjects() {
 
         {/* Intro Text */}
         <p className="text-center text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed">
-          Throughout my experience, I have consistently focused on projects that don't just exist as standalone tasks but truly impact a company's bottom line.
+          Throughout my experience, I have consistently focused on projects that don&apos;t just exist as standalone tasks but truly impact a company&apos;s bottom line. {/* FIX: Added &apos; */}
         </p>
 
         {/* Primary Industry Project Cards (3 per row on larger screens, full width utilization) */}
