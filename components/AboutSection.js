@@ -9,7 +9,7 @@ const AboutSection = () => {
 <div className=" flex flex-col md:flex-row md:space-x-6 p-4">
   <div className="flex-shrink-0 mb-4 md:mb-0">
   <img
-  src="manasjainattriggrs.jpg"
+  src="acml.jpg"
   alt="Manas Jain"
   className="w-full max-w-xs aspect-square object-cover rounded-lg"
 />

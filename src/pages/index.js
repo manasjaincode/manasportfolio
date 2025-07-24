@@ -10,11 +10,13 @@ export default function Home() {
     <div>
       <Navbar />
       <AboutSection/>
-      <Featured/>
       <ExperienceSection/>
+            {<ProjectSection/>}
+
+            <Featured/>
+
       <PublicSpeaking/>
       <Certificates/>
-      {<ProjectSection/>}
      
   
       

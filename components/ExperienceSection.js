@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
-import { Briefcase } from 'lucide-react';
-
+import Image from 'next/image';
 export default function ExperienceSection() {
   const experiences = [
     {
@@ -10,12 +9,10 @@ export default function ExperienceSection() {
       description: "India's one of the largest stock broking firms.",
       duration: "Feb 2023 - May 2023",
       techIcons: [
-        // Using local images from the public folder
         { name: "API Development", src: "/api.png" },
         { name: "Tailwind CSS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
         { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Postman", src: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
-        // Using local images from the public folder
         { name: "Cron Jobs", src: "/cron.png" },
       ],
       logo: "/acml.jpg",
@@ -33,8 +30,8 @@ export default function ExperienceSection() {
         { name: "GitHub", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
         { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
       ],
-  logo: "/triggr.jpg", 
-        altText: "Triggrs Web Solutions company logo."
+      logo: "/triggr.jpg",
+      altText: "Triggrs Web Solutions company logo."
     },
   ];
 
@@ -47,52 +44,62 @@ export default function ExperienceSection() {
         </h2>
       </div>
 
-      {/* Experience Cards - Each covering full width */}
-      <div className="flex flex-col gap-16">
+      {/* Experience Cards - Two Columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-7xl mx-auto"> {/* Use grid for 2 columns, added gap */}
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="w-full p-6 sm:p-8 md:p-10 lg:p-12 text-white rounded-2xl"
+            className="p-6 sm:p-8 text-white rounded-2xl border border-gray-700 bg-gray-900/20
+                       flex flex-col items-center text-center {/* Center content within card */}
+                       md:flex-row md:text-left md:items-start md:gap-6
+                       relative" // Added relative for the divider line
           >
-            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-              {/* Image Section - Large and Responsive */}
-              <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/3 xl:w-1/4">
-                <img
-                  src={exp.logo}
-                  alt={exp.altText}
-                  className="w-full h-auto object-cover rounded-lg shadow-2xl"
-                />
+            {/* Conditional Divider Line */}
+            {index === 0 && experiences.length > 1 && (
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px bg-gray-600 h-4/5 hidden lg:block"></div>
+            )}
+            {/* Removed the `img` tag from here and replaced with `Image` from next/image for better performance and to address the warning. The `width` and `height` props are necessary for Next.js Image component. */}
+            {/* Image Section - More Compact */}
+            <div className="flex-shrink-0 w-32 h-32 md:w-24 md:h-24 lg:w-28 lg:h-28 mb-4 md:mb-0 md:mr-4"> {/* Compact image size */}
+              <Image
+                src={exp.logo}
+                alt={exp.altText}
+                width={300} // Smaller explicit width for compact display
+                height={300} // Smaller explicit height for compact display
+                className="w-full h-full object-cover rounded-lg shadow-md"
+              />
+            </div>
+
+            {/* Text Content Section */}
+            <div className="flex-grow">
+              <div className="mb-3"> {/* Reduced margin bottom */}
+                <h3 className="text-2xl md:text-2xl font-extrabold text-gray-300 mb-1">{exp.role}</h3> {/* Compact font size */}
+                <p className="text-md md:text-lg text-gray-300 mb-0.5">{exp.company}</p> {/* Compact font size */}
+                <p className="text-sm md:text-base text-gray-400 mb-2">{exp.description}</p> {/* Compact font size */}
+                <p className="text-sm md:text-base text-gray-400 font-medium">{exp.duration}</p> {/* Compact font size */}
               </div>
 
-              {/* Text Content Section */}
-              <div className="flex-grow text-center md:text-left">
-                <div className="mb-4">
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-[#00ff9f] mb-2">{exp.role}</h3>
-                  <p className="text-lg md:text-xl text-gray-300 mb-1">{exp.company}</p>
-                  <p className="text-base md:text-lg text-gray-400 mb-3">{exp.description}</p>
-                  <p className="text-base md:text-lg text-gray-400 font-medium">{exp.duration}</p>
+              {/* Tech Icons - only render if there are any */}
+              {exp.techIcons && exp.techIcons.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-3 justify-center md:justify-start"> {/* Reduced gap */}
+                  {exp.techIcons.map((tech, idx) => (
+                    <div
+                      key={idx}
+                      className="group relative flex flex-col items-center"
+                    >
+                      {/* Using Next.js Image component for tech icons too */}
+                      <Image
+                        src={tech.src}
+                        alt={tech.name}
+                        title={tech.name}
+                        width={32} // Smaller tech icon size
+                        height={32} // Smaller tech icon size
+                        className="rounded-lg transition-transform duration-300 bg-white p-1 hover:scale-110"
+                      />
+                    </div>
+                  ))}
                 </div>
-
-                {/* Tech Icons - only render if there are any */}
-                {exp.techIcons && exp.techIcons.length > 0 && (
-                  <div className="mt-6 flex flex-wrap gap-5 justify-center md:justify-start">
-                    {exp.techIcons.map((tech, idx) => (
-                      <div
-                        key={idx}
-                        className="group relative flex flex-col items-center"
-                      >
-                        <img
-                          src={tech.src}
-                          alt={tech.name}
-                          // This line is crucial for the hover tooltip!
-                          title={tech.name}
-                          className="w-10 h-10 rounded-lg transition-transform duration-300 bg-white p-1 hover:scale-110"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
           </div>
         ))}
