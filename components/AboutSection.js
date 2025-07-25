@@ -41,7 +41,7 @@ const AboutSection = () => {
                     <div className="mt-4 text-[#00ff9f]">
                         <span className="font-bold text-lg">Hire me.</span>
                         <a
-                            href="/Manas Jain Resume 2025.pdf"
+                            // href="/Manas Jain Resume 2025.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg ml-2 font-bold text-lg"
