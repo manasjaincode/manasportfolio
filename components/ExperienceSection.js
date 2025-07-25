@@ -7,7 +7,7 @@ export default function ExperienceSection() {
       role: "IT Trainee",
       company: "Arihant Capital Markets Ltd",
       description: "India's one of the largest stock broking firms.",
-      duration: "Feb 2023 - May 2023",
+      duration: "June 2025 - July 2025",
       techIcons: [
         { name: "API Development", src: "/api.png" },
         { name: "Tailwind CSS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },

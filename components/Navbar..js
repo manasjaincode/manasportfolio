@@ -8,7 +8,7 @@ const images = [
   '/manascartoon1.png',
   '/manascartoon2.png',
   '/manascartoon3.png',
-  '/manascartoon4.png',
+  '/manascartoon4final.png',
 ];
 
 export default function AboutPage() {
@@ -63,33 +63,34 @@ export default function AboutPage() {
 
           {/* Image Carousel with Arrows and Text Below */}
           <div className="flex flex-col items-center gap-4 relative w-72 md:w-[22rem]">
+            {/* Inner div containing the image and arrows */}
             <div className="w-full h-auto flex justify-center items-center rounded-3xl overflow-hidden relative">
               <Image
                 src={images[currentImageIndex]}
                 alt="Manas Cartoon"
                 width={352}
                 height={352}
-                className="object-contain w-full h-auto rounded-3xl"
+                className="object-contain w-full h-auto rounded-3xl px-8"
               />
-              {/* Left Arrow - Removed background and rounded-full, added hover effect for visibility */}
+              {/* Left Arrow - Position relative to parent 'w-full' div */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white cursor-pointer z-10 transition-colors duration-200 hover:text-[#00ff9f]" // Changed hover color
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white cursor-pointer z-10 transition-colors duration-200 hover:text-[#00ff9f]"
                 aria-label="Previous Image"
               >
                 <ArrowLeft size={28} />
               </button>
-              {/* Right Arrow - Removed background and rounded-full, added hover effect for visibility */}
+              {/* Right Arrow - Position relative to parent 'w-full' div */}
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white cursor-pointer z-10 transition-colors duration-200 hover:text-[#00ff9f]" // Changed hover color
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white cursor-pointer z-10 transition-colors duration-200 hover:text-[#00ff9f]"
                 aria-label="Next Image"
               >
                 <ArrowRight size={28} />
               </button>
             </div>
-            {/* Text below the image cycler */}
-            <p className="text-white text-lg md:text-xl font-bold mt-2">
+            {/* Text below the image cycler - MODIFIED: Added tracking-wider */}
+            <p className="text-white text-lg md:text-xl font-bold mt-2 tracking-wider">
               Coffee | Code | Sleep
             </p>
           </div>

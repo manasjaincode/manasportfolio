@@ -83,37 +83,8 @@ export default function PublicSpeaking() {
         </Slider>
       </div>
 
-      {/* Dynamic Event Highlights */}
-      <div className="max-w-5xl mx-auto bg-[#1a1a1a] text-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8">
-  {/* Trophy Image */}
-  <div className="w-full md:w-1/3 flex justify-center">
-    <img 
-      src="/manastrophy.jpg" 
-      alt="Manas Trophy" 
-      className="rounded-2xl shadow-lg object-cover w-64 h-64 md:w-72 md:h-72"
-    />
-  </div>
-
-  {/* Achievements List */}
-  <div className="w-full md:w-2/3">
-    <ul className="list-disc list-inside space-y-4 text-lg md:text-xl font-semibold leading-relaxed">
-      <li>
-        Hosted <span className="text-[#00ff9f] font-bold">5+ public tech events</span> with 
-        <span className="text-[#00ff9f] font-bold"> 1,200+ attendees</span>, igniting minds with ideas that build and inspire.
-      </li>
-      <li>
-        Mentored peers in <span className="text-[#00ff9f] font-bold">system design fundamentals</span>, including scalable URL shorteners—
-        enhancing architectural thinking in <span className="text-[#00ff9f] font-bold">100+ students</span>.
-      </li>
-      <li>
-        Twice a <span className="text-[#00ff9f] font-bold">hackathon finalist and team lead</span>, navigating high-pressure innovation with clarity and synergy.
-      </li>
-      <li>
-        Recognized in <span className="text-[#00ff9f] font-bold">3+ MUN Conferences</span> for eloquence, diplomacy, and impactful resolution framing.
-      </li>
-    </ul>
-  </div>
-</div>
+  
+  
 
 </div>
 

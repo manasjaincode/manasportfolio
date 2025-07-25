@@ -7,44 +7,44 @@ export default function IndustryProjects() {
   const primaryIndustryProjects = [
     {
       title: 'Partner (Sub-Broker Program)',
-      image: '/referral-partner.jpg', // Make sure this image is in your public folder
+      image: '/referpartner.jpg', // Updated image path
       description: (
         <>
           A referral-based partner module for ArihantCapital, enabling existing sub-brokers to onboard new business partners, driving B2B acquisition through commission-linked onboarding flows and real-time tracking APIs.
         </>
       ),
-      link: "https://www.arihantcapital.com/partner-program", // Replace with actual link
+      link: "https://d1kppjhucx1n2q.cloudfront.net/", // Updated link for Partner
       linkText: "View Program",
     },
     {
       title: 'Refer & Earn (Retail Referral)',
-      image: '/refer-earn.jpg', // Make sure this image is in your public folder
+      image: '/referearn.jpg', // Updated image path
       description: (
         <>
           A referral-based reward module to empower clients to invite new users and earn brokerage, boosting customer acquisition via trust-based referral loops and automated reward tracking.
         </>
       ),
-      link: "https://www.arihantcapital.com/refer-and-earn", // Replace with actual link
+      link: "https://refer.arihantcapital.com/", // Updated link for Refer & Earn
       linkText: "View Module",
     },
     {
       title: 'FreshconIndia.com',
-      image: '/freshconindia.jpg', // Make sure this image is in your public folder
+      image: '/freshcon.jpg', // Updated image path
       description: (
         <>
           An e-commerce platform for pre-cooked pantry staples, serving 1000+ users/month and supporting 50+ SKUs with a seamless shopping experience and responsive UI.
         </>
       ),
-      link: "https://www.freshconindia.com/", // Replace with actual link
+      link: "https://www.freshconindia.com/", // Updated link for FreshconIndia
       linkText: "Visit Website",
     },
   ];
 
-  // Define other projects
+  // Define other projects (no changes here, keeping original content)
   const otherProjects = [
     {
       title: 'ShortCraze',
-      image: '/shortcrazeui.jpg',
+      image: '/shortcraze.jpg',
       description: (
         <>
           Scalable URL shortener with custom keywords, QR generation & global analytics.
@@ -93,9 +93,9 @@ export default function IndustryProjects() {
   const PrimaryProjectCard = ({ project }) => (
     <div
       className="w-full p-4 sm:p-5 text-white rounded-xl
-                 bg-transparent border border-[#333] shadow-md
-                 hover:border-[#00ff9f] transition-all duration-300
-                 flex flex-col h-full"
+                   bg-transparent border border-[#333] shadow-md
+                   hover:border-[#00ff9f] transition-all duration-300
+                   flex flex-col h-full"
     >
       {/* Image */}
       <div className="mb-4 flex justify-center">
@@ -137,9 +137,9 @@ export default function IndustryProjects() {
   const OtherProjectCard = ({ project }) => (
     <div
       className="w-full p-2 text-white rounded-md
-                 bg-transparent border border-[#444] shadow-sm
-                 hover:border-[#00ff9f] transition-all duration-300
-                 flex flex-col h-full"
+                   bg-transparent border border-[#444] shadow-sm
+                   hover:border-[#00ff9f] transition-all duration-300
+                   flex flex-col h-full"
     >
       {/* Image */}
       <div className="mb-2 flex justify-center">
@@ -191,7 +191,7 @@ export default function IndustryProjects() {
 
         {/* Intro Text */}
         <p className="text-center text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed">
-          Throughout my experience, I have consistently focused on projects that don&apos;t just exist as standalone tasks but truly impact a company&apos;s bottom line. {/* FIX: Added &apos; */}
+          Throughout my experience, I have consistently focused on projects that don&apos;t just exist as standalone tasks but truly impact a company&apos;s bottom line.
         </p>
 
         {/* Primary Industry Project Cards (3 per row on larger screens, full width utilization) */}
