@@ -191,8 +191,8 @@ export default function IndustryProjects() {
 
         {/* Intro Text */}
         <p className="text-center text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed">
-          Throughout my experience, I have consistently focused on projects that don&apos;t just exist as standalone tasks but truly impact a company&apos;s bottom line.
-        </p>
+  Throughout my experience, I have consistently focused on projects that don&apos;t just exist as standalone tasks but truly impact a company&apos;s bottom line.
+</p>
 
         {/* Primary Industry Project Cards (3 per row on larger screens, full width utilization) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
