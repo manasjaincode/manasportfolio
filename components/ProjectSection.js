@@ -93,9 +93,9 @@ export default function IndustryProjects() {
   const PrimaryProjectCard = ({ project }) => (
     <div
       className="w-full p-4 sm:p-5 text-white rounded-xl
-                   bg-transparent border border-[#333] shadow-md
-                   hover:border-[#00ff9f] transition-all duration-300
-                   flex flex-col h-full"
+                  bg-transparent border border-[#333] shadow-md
+                  hover:border-[#00ff9f] transition-all duration-300
+                  flex flex-col h-full"
     >
       {/* Image */}
       <div className="mb-4 flex justify-center">
@@ -137,9 +137,9 @@ export default function IndustryProjects() {
   const OtherProjectCard = ({ project }) => (
     <div
       className="w-full p-2 text-white rounded-md
-                   bg-transparent border border-[#444] shadow-sm
-                   hover:border-[#00ff9f] transition-all duration-300
-                   flex flex-col h-full"
+                  bg-transparent border border-[#444] shadow-sm
+                  hover:border-[#00ff9f] transition-all duration-300
+                  flex flex-col h-full"
     >
       {/* Image */}
       <div className="mb-2 flex justify-center">
