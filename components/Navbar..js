@@ -34,28 +34,12 @@ export default function AboutPage() {
         <div className="flex justify-between items-center">
           <span className="text-gray-400 text-3xl font-semibold">Code with Manas 🧑🏼‍💻</span>
 
-          <div className="hidden md:flex space-x-6">
-            <a href="#" className="hover:text-[#00ff9f] transition">HOME</a>
-            <a href="#"  className="hover:text-[#00ff9f] transition">EXPERIENCE</a> {/* Corrected class here if it was malformed */}
-            <a href="#" className="hover:text-[#00ff9f] transition">ABOUT</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">PROJECTS</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">TECH ACHIEVEMENTS</a>
-          </div>
+       
 
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <X size={28} color="#00ff9f" /> : <Menu size={28} color="#00ff9f" />}
-          </button>
+        
         </div>
 
-        {menuOpen && (
-          <div className="mt-4 flex flex-col items-center gap-4 py-4 md:hidden">
-            <a href="#" className="hover:text-[#00ff9f] transition">HOME</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">EXPERIENCE</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">ABOUT</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">PROJECTS</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">TECH ACHIEVEMENTS</a>
-          </div>
-        )}
+     
       </nav>
 
       {/* Space below navbar */}

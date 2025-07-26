@@ -2,7 +2,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow"; // Import Coverflow effect CSS
+import "swiper/css/pagination"; // For pagination dots
+import "swiper/css/navigation"; // For navigation arrows (optional, if you want default ones)
+
+// Import required modules
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules"; // Include Navigation if you want default arrows
 
 const hackathons = [
   {
@@ -23,30 +34,13 @@ const hackathons = [
 ];
 
 export default function HackathonSection() {
-  const [imageIndexes, setImageIndexes] = useState(
-    Array(hackathons.length).fill(0)
-  );
+  // imageIndexes and handleNext/PrevImage are no longer needed with Swiper
+  // const [imageIndexes, setImageIndexes] = useState(
+  //   Array(hackathons.length).fill(0)
+  // );
 
-  const handleNextImage = (hackathonIndex) => {
-    setImageIndexes((prev) =>
-      prev.map((imgIdx, idx) =>
-        idx === hackathonIndex
-          ? (imgIdx + 1) % hackathons[hackathonIndex].images.length
-          : imgIdx
-      )
-    );
-  };
-
-  const handlePrevImage = (hackathonIndex) => {
-    setImageIndexes((prev) =>
-      prev.map((imgIdx, idx) =>
-        idx === hackathonIndex
-          ? (imgIdx - 1 + hackathons[hackathonIndex].images.length) %
-            hackathons[hackathonIndex].images.length
-          : imgIdx
-      )
-    );
-  };
+  // const handleNextImage = (hackathonIndex) => { ... };
+  // const handlePrevImage = (hackathonIndex) => { ... };
 
   return (
     <div className=" bg-[#111] py-16">
@@ -60,40 +54,42 @@ export default function HackathonSection() {
             key={i}
             className="bg-gray-900 p-4 rounded-xl shadow-lg flex flex-col items-center w-full max-w-[320px] mx-auto"
           >
-            {/* Image Slider */}
+            {/* Image Slider using Swiper */}
             <div className="relative w-full h-48 mb-3">
-              <motion.div
-                key={hackathon.images[imageIndexes[i]]}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                className="absolute w-full h-full"
+              <Swiper
+                effect={"coverflow"}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={"auto"} // Adjusts slides based on the slide's width
+                coverflowEffect={{
+                  rotate: 50,    // Degree of rotation
+                  stretch: 0,    // Space between slides
+                  depth: 100,    // Depth of the effect
+                  modifier: 1,   // Effect multiplier
+                  slideShadows: true, // Show shadows
+                }}
+                loop={true} // Infinite loop
+                pagination={{ clickable: true }} // Pagination dots
+                navigation={true} // Navigation arrows (default Swiper arrows)
+                modules={[EffectCoverflow, Pagination, Navigation]} // Include necessary modules
+                className="mySwiper w-full h-full" // Swiper fills its parent container
               >
-                <Image
-                  src={hackathon.images[imageIndexes[i]]}
-                  alt={hackathon.title}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </motion.div>
-
-              <button
-                onClick={() => handlePrevImage(i)}
-                className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-200 p-1 rounded-full"
-              >
-                <ChevronLeft size={16} />
-              </button>
-              <button
-                onClick={() => handleNextImage(i)}
-                className="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-200 p-1 rounded-full"
-              >
-                <ChevronRight size={16} />
-              </button>
+                {hackathon.images.map((imageSrc, imgIdx) => (
+                  <SwiperSlide key={imgIdx} className="flex justify-center items-center overflow-hidden rounded-lg">
+                    <Image
+                      src={imageSrc}
+                      alt={`${hackathon.title} Image ${imgIdx + 1}`}
+                      fill
+                      className="object-cover rounded-lg" // object-cover to ensure image fills slide
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
 
             {/* Hackathon Info */}
             <motion.div
-              key={hackathon.title}
+              key={hackathon.title} // Re-using key from outer map for consistency, but not strictly needed inside SwiperSlide
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}

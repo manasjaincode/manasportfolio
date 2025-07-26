@@ -44,7 +44,7 @@ export default function IndustryProjects() {
   const otherProjects = [
     {
       title: 'ShortCraze',
-      image: '/shortcraze.jpg',
+      image: '/shortcrazeui.jpg',
       description: (
         <>
           Scalable URL shortener with custom keywords, QR generation & global analytics.
@@ -93,9 +93,9 @@ export default function IndustryProjects() {
   const PrimaryProjectCard = ({ project }) => (
     <div
       className="w-full p-4 sm:p-5 text-white rounded-xl
-                  bg-transparent border border-[#333] shadow-md
-                  hover:border-[#00ff9f] transition-all duration-300
-                  flex flex-col h-full"
+                   bg-transparent border border-[#333] shadow-md
+                   hover:border-[#00ff9f] transition-all duration-300
+                   flex flex-col h-full"
     >
       {/* Image */}
       <div className="mb-4 flex justify-center">
@@ -137,9 +137,9 @@ export default function IndustryProjects() {
   const OtherProjectCard = ({ project }) => (
     <div
       className="w-full p-2 text-white rounded-md
-                  bg-transparent border border-[#444] shadow-sm
-                  hover:border-[#00ff9f] transition-all duration-300
-                  flex flex-col h-full"
+                   bg-transparent border border-[#444] shadow-sm
+                   hover:border-[#00ff9f] transition-all duration-300
+                   flex flex-col h-full"
     >
       {/* Image */}
       <div className="mb-2 flex justify-center">
@@ -191,8 +191,8 @@ export default function IndustryProjects() {
 
         {/* Intro Text */}
         <p className="text-center text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed">
-  Throughout my experience, I have consistently focused on projects that truly impact the bottom line of a company.
-</p>
+          Throughout my experience, I have consistently focused on projects that truly impact the bottom line of a company. 
+        </p>
 
         {/* Primary Industry Project Cards (3 per row on larger screens, full width utilization) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
