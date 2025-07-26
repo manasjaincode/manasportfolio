@@ -7,12 +7,13 @@ import Image from 'next/image';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/effect-cards';
+import 'swiper/css/effect-coverflow'; // Import Coverflow effect CSS
+import 'swiper/css/pagination'; // Coverflow often looks good with pagination
 
 // Import required modules
-import { EffectCards } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'; // Added Pagination and Navigation for coverflow
 
-// Define your innovation data (only slide content and background color needed now)
+// Define your innovation data
 const innovations = [
   {
     slideContent: 'Indore Mayor Appreciation',
@@ -49,35 +50,44 @@ export default function ProfessionalInnovations() {
         {/* Left Side: Swiper Carousel */}
         <div className="w-full lg:w-1/2 flex justify-center items-center mb-8 lg:mb-0">
           <Swiper
-            effect={'cards'}
+            // --- Changed to EffectCoverflow ---
+            effect={'coverflow'}
             grabCursor={true}
-            initialSlide={0}
-            speed={500}
-            loop={true}
-            cardsEffect={{
-              rotate: true,
-              perSlideOffset: 8,
-              perSlideRotate: 2,
+            centeredSlides={true}
+            slidesPerView={'auto'} // 'auto' makes it responsive to the slide width
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
             }}
+            loop={true}
+            speed={500}
             mousewheel={{ invert: false }}
-            modules={[EffectCards]}
-            className="mySwiper w-[280px] h-[330px] md:w-[350px] md:h-[500px] lg:w-[450px] lg:h-[550px]"
+            modules={[EffectCoverflow, Pagination, Navigation]} // Added Pagination, Navigation
+            pagination={{ clickable: true }} // Enable clickable pagination dots
+            navigation={true} // Enable default navigation arrows (optional, can be styled)
+            // Increased Swiper overall dimensions to give more room for coverflow effect
+            className="mySwiper w-[300px] h-[380px] md:w-[400px] md:h-[550px] lg:w-[500px] lg:h-[600px]"
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           >
             {innovations.map((innovation, index) => (
               <SwiperSlide
                 key={index}
                 style={{ backgroundColor: innovation.slideBgColor }}
-                // Added justify-center back, along with flex-col and items-center for full centering
-                className="flex flex-col items-center justify-center rounded-xl font-bold text-white p-4"
+                // Added flex-col, items-center, justify-center for full centering
+                // Added overflow-hidden to prevent content spilling out during animation
+                className="flex flex-col items-center justify-center rounded-xl font-bold text-white p-4 overflow-hidden"
               >
-                {/* 1. Heading (Top, with specific top margin) */}
-                <h2 className="text-xl md:text-2xl lg:text-3xl px-2 leading-tight text-center mt-6 mb-4">
+                {/* 1. Heading (Top, with responsive horizontal padding and explicit min-height for stability) */}
+                <h2 className="text-xl md:text-2xl lg:text-3xl px-1 sm:px-2 leading-tight text-center mt-6 mb-4 min-h-[4rem] flex items-center justify-center"> {/* min-h-[4rem] for 64px to match h-16, ensuring consistent height */}
                   {innovation.slideContent}
                 </h2>
 
-                {/* 2. Image Container (Larger and Centered) */}
-                <div className="relative w-[150px] h-[150px] md:w-[220px] md:h-[220px] lg:w-[300px] lg:h-[300px]"> {/* Increased image sizes */}
+                {/* 2. Image Container (Larger and Centered, responsive sizing and fixed aspect ratio for stability) */}
+                {/* Ensure image container is smaller than SwiperSlide to leave room for text */}
+                <div className="relative w-[180px] h-[180px] md:w-[250px] md:h-[250px] lg:w-[320px] lg:h-[320px] flex-shrink-0">
                   <Image
                     src={innovation.imagePath}
                     alt={innovation.slideContent}

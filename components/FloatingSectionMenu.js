@@ -14,7 +14,7 @@ const sections = [
   { name: 'HACKATHONS', id: 'hackathons-section', icon: Award },
   { name: 'PUBLIC SPEAKING', id: 'public-speaking-section', icon: Award },
   // NEW: Add Professional Innovations section
-  { name: 'INNOVATIONS', id: 'professional-innovations-section', icon: Lightbulb }, // Using Lightbulb icon
+  { name: 'PROFESSIONAL INITIATIVES', id: 'professional-innovations-section', icon: Lightbulb }, // Using Lightbulb icon
   { name: 'CERTIFICATES', id: 'certificates-section', icon: Award },
 ];
 

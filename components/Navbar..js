@@ -1,8 +1,21 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import { Menu, X, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react'; // ArrowLeft, ArrowRight will be handled by Swiper's navigation
 import { motion } from 'framer-motion';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow'; // Import Coverflow effect CSS
+import 'swiper/css/pagination'; // For pagination dots if you want them
+import 'swiper/css/navigation'; // For navigation arrows if you want them
+
+// Import required modules
+import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules'; // Added Autoplay module
+
 
 const images = [
   '/manascartoon1.png',
@@ -13,15 +26,6 @@ const images = [
 
 export default function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
 
   return (
     <div className="min-h-screen bg-[#111] text-white overflow-hidden">
@@ -32,7 +36,7 @@ export default function AboutPage() {
 
           <div className="hidden md:flex space-x-6">
             <a href="#" className="hover:text-[#00ff9f] transition">HOME</a>
-            <a href="#" className="hover:text-[#00ff9f] transition">EXPERIENCE</a>
+            <a href="#"  className="hover:text-[#00ff9f] transition">EXPERIENCE</a> {/* Corrected class here if it was malformed */}
             <a href="#" className="hover:text-[#00ff9f] transition">ABOUT</a>
             <a href="#" className="hover:text-[#00ff9f] transition">PROJECTS</a>
             <a href="#" className="hover:text-[#00ff9f] transition">TECH ACHIEVEMENTS</a>
@@ -61,35 +65,48 @@ export default function AboutPage() {
       <div className="relative z-10 px-6 py-12 backdrop-blur-sm">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10 max-w-6xl mx-auto">
 
-          {/* Image Carousel with Arrows and Text Below */}
-          <div className="flex flex-col items-center gap-4 relative w-72 md:w-[22rem]">
-            {/* Inner div containing the image and arrows */}
-            <div className="w-full h-auto flex justify-center items-center rounded-3xl overflow-hidden relative">
-              <Image
-                src={images[currentImageIndex]}
-                alt="Manas Cartoon"
-                width={352}
-                height={352}
-                className="object-contain w-full h-auto rounded-3xl px-8"
-              />
-              {/* Left Arrow - Position relative to parent 'w-full' div */}
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white cursor-pointer z-10 transition-colors duration-200 hover:text-[#00ff9f]"
-                aria-label="Previous Image"
-              >
-                <ArrowLeft size={28} />
-              </button>
-              {/* Right Arrow - Position relative to parent 'w-full' div */}
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white cursor-pointer z-10 transition-colors duration-200 hover:text-[#00ff9f]"
-                aria-label="Next Image"
-              >
-                <ArrowRight size={28} />
-              </button>
-            </div>
-            {/* Text below the image cycler - MODIFIED: Added tracking-wider */}
+          {/* Image Carousel with Swiper EffectCoverflow */}
+          {/* Swiper container takes full width of its parent 'w-72 md:w-[22rem]' */}
+          <div className="w-72 md:w-[22rem] flex flex-col items-center gap-4 relative">
+            <Swiper
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={'auto'} // Use 'auto' for responsive slides based on their content/size
+              coverflowEffect={{
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              loop={true} // Enable looping
+              autoplay={{ // Autoplay settings
+                delay: 3000,
+                disableOnInteraction: false, // Keep autoplaying even after user interaction
+              }}
+              pagination={{ clickable: true }} // Enable clickable pagination dots
+              navigation={true} // Enable navigation arrows (default Swiper arrows will appear)
+              modules={[EffectCoverflow, Pagination, Navigation, Autoplay]} // Include all necessary modules
+              className="mySwiper w-full h-[350px] md:h-[450px]" // Swiper takes full width, set specific height
+            >
+              {images.map((src, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="flex justify-center items-center overflow-hidden rounded-3xl" // Ensure content is centered and overflow is hidden
+                >
+                  <Image
+                    src={src}
+                    alt={`Manas Cartoon ${index + 1}`}
+                    // Use fill and a relative parent with defined dimensions for responsiveness within the slide
+                    fill
+                    className="object-contain rounded-3xl p-4" // Use p-4 for padding around the image, adjusts for smaller screens
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Text below the image cycler */}
             <p className="text-white text-lg md:text-xl font-bold mt-2 tracking-wider">
               Coffee | Code | Sleep
             </p>
