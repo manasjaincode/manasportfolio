@@ -97,7 +97,7 @@ export default function ProfessionalInnovations() {
               Innovating for a Better World.
             </h3>
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              Using technology, we can empower the world with innovative, productive solutions and provide an easier life for everyone. This belief drives me to seize every opportunity to serve society and its people. My mind is constantly buzzing with crazy ideas, pushing the boundaries of what's possible!
+              Using technology, we can empower the world with innovative, productive solutions and provide an easier life for everyone. This belief drives me to seize every opportunity to serve society and its people.
             </p>
           </div>
         </div>
